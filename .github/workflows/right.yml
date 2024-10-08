@@ -1,0 +1,17 @@
+name: Right Workflow
+on: push
+jobs: 
+  print:
+    runs-on: windows-2022
+    steps:
+    - name: Print on console
+      run: echo Hello GH Actions!
+    - name: Print a few lines
+      run: |
+        echo First line!
+        echo Second line!
+    - name: print title
+      env:
+    	  TITLE: ${{ github.event.issue.title }}
+  	  run: echo "$TITLE"
+     
