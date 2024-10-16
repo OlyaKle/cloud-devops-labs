@@ -1,0 +1,17 @@
+name: Good Workflow
+on:
+  push:  
+    branches:
+      - main 
+jobs:
+  print:
+    runs-on: windows-2022  
+    steps: 
+      - name: Print on console
+        run: echo "Hello GH Actions!"
+      - name: Print a few lines
+        run: |
+          echo "First line!"
+          echo "Second line!"
+      - name: Print title safely
+        run: echo "${{ github.event.issue.title }}" || echo "No title available" 
