@@ -23,8 +23,12 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Install dependencies
-        run: pip install -r requirements.txt
+      - name: Install dependencies (ignore missing file)
+        run: |
+         if [ -f requirements.txt ]; then pip install -r requirements.txt
+         else
+         echo "No requirements.txt found, skipping dependencies installation."
+         fi
 
       - name: Run HelloNY Python script
         run: |
