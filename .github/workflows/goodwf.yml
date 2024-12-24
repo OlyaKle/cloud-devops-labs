@@ -17,8 +17,6 @@ jobs:
           echo "Second line!"
       - name: Print title safely
         run: echo "${{ github.event.issue.title }}" || echo "No title available" 
-      - name: List repository files
-        run: dir
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
