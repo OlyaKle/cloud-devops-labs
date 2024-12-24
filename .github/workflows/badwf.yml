@@ -33,4 +33,4 @@ jobs:
           }
 
       - name: Run HelloNY Python script
-        run: python ./HelloNY.py
+        run: python .github/workflows/HelloNY.py
