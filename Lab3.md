@@ -3,29 +3,28 @@
 
 Для этого необходимо было выполнить следующие действия, а именно:
 1) Кликнуть на кнопочку `new workflow`;
-
-![Image alt](3.1.png)
+![Image alt](lab3photo/3.1.png)
 
 2) Выбрать "создать свой воркфлоу самостоятельно".
-![Image alt](3.2.png)
+![Image alt](lab3photo/3.2.png)
 
 ## Задание 1
 > Написать “плохой” CI/CD файл, который работает, но в нем есть не менее пяти “bad practices” по написанию CI/CD.
 
 При выполнении задания в GitHub в разделе `GitHub Actions` был создан воркфлоу `badwf.yml`. На следующих картинках видно, что он был собран и запущен успешно.
 
-![Image alt](3.8.png)
+![Image alt](lab3photo/3.8.png)
 
 А кликнув на три точки справа от созданного файла, можно выбрать из выпадающего меню пункт `view this workflow` и посмотреть код данного воркфлоу.
 
-![Image alt](3.12.png)
-![Image alt](3.5.png)
+![Image alt](lab3photo/3.12.png)
+![Image alt](lab3photo/3.5.png)
 
 Если вернуться обратно и кликнуть на кнопку `print` можно увидеть как работал файл.
 
-![Image alt](3.13.png)
-![Image alt](3.6.png)
-![Image alt](3.7.png)
+![Image alt](lab3photo/3.13.png)
+![Image alt](lab3photo/3.6.png)
+![Image alt](lab3photo/3.7.png)
 
 При реализации были "допущены" следующие плохие практики:
 - одинаковые названия: в репо - 2 "Bad Workflow"
@@ -69,7 +68,7 @@ run: echo "${{ github.event.issue.title }}"
 
 Был создан хороший воркфлоу - `goodwf.yml`.
 
-![Image alt](3.9.png)
+![Image alt](lab3photo/3.9.png)
 
 Почему он теперь хороший?
 - Изменено имя на `Latest Bad Workflow`, а в новом файле 
@@ -77,7 +76,7 @@ run: echo "${{ github.event.issue.title }}"
 ```
 name: Good Workflow
 ```
-![Image alt](3.11.png)
+![Image alt](lab3photo/3.11.png)
 
 - тег `latest` заменен на последнюю версию `windows-2022` c сайта 
 ```
@@ -112,5 +111,5 @@ run: echo "${{ github.event.issue.title }}" || echo "No title available"
 
 На следующей картинке видно, что `goodwf.yml` собрался и полностью отработал. Из-за того что и `badwf.yml` и `goodwf.yml` очень маленькие файлы разницы во времени сборки почти нет, однако отсутствие необходимости переходить в другую вкладку и в ручную запускать воркфлоу немного экономит время. 
 
-![Image alt](3.10.png)
+![Image alt](lab3photo/3.10.png)
 
