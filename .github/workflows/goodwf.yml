@@ -32,4 +32,4 @@ jobs:
             Write-Output 'No requirements.txt found, skipping dependencies installation.'
           }
       - name: Run HelloNY Python script
-        run: python .github/workflow/HelloNY.py
+        run: python .github/workflows/HelloNY.py
