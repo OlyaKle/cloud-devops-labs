@@ -4,15 +4,25 @@ jobs:
   print:
     runs-on: windows-latest
     steps: 
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
       - name: Print on console
         run: echo Hello GH Actions!
+
       - name: Print a few lines
         run: |
           echo First line!
           echo Second line!
-      - name: print title
+
+      - name: Print title
         run: echo "${{ github.event.issue.title }}"
-      - name: Run HelloNY script
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8'
+
+      - name: Run HelloNY Python script
         run: python HelloNY.py
-        shell: python
         
