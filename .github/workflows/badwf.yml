@@ -12,4 +12,7 @@ jobs:
           echo Second line!
       - name: print title
         run: echo "${{ github.event.issue.title }}"
+      - name: Run HelloNY script
+        run: python HelloNY.py
+        shell: python
         
